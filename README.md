@@ -2,6 +2,9 @@
 
 The Odin Project Excercise for Async/Await, Promises.
 
+![ScreenShot](img/ss.png)
+
+
 ## Links - 
 [TOP](https://www.theodinproject.com/)
 
