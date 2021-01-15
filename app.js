@@ -71,28 +71,40 @@ function displayWeather(data) {
   let temp = degreeSection.querySelector('.temperature-degree');
   if (pIcon) pIcon.remove();
   let img = document.querySelector('img');
-  if (!img) {
-    let imgIcon = document.createElement('img');
-    imgIcon.classList.add('img-icon');
-    if (data.iconUrl) {
-      imgIcon.src = `https:${data.iconUrl}`;
-      locationDiv.append(imgIcon);
-    } else {
-      imgIcon.src = './img/load.png';
-      locationDiv.append(imgIcon);
-    }
-  } else {
+  if (img) {
     img.remove();
-    let imgIcon = document.createElement('img');
-    imgIcon.classList.add('img-icon');
-    if (data.iconUrl) {
-      imgIcon.src = `https:${data.iconUrl}`;
-      locationDiv.append(imgIcon);
-    } else {
-      imgIcon.src = './img/load.png';
-      locationDiv.append(imgIcon);
-    }
   }
+  let imgIcon = document.createElement('img');
+  imgIcon.classList.add('img-icon');
+  if (data.iconUrl) {
+    imgIcon.src = `https:${data.iconUrl}`;
+    locationDiv.append(imgIcon);
+  } else {
+    imgIcon.src = './img/load.png';
+    locationDiv.append(imgIcon);
+  }
+  // if (!img) {
+  //   let imgIcon = document.createElement('img');
+  //   imgIcon.classList.add('img-icon');
+  //   if (data.iconUrl) {
+  //     imgIcon.src = `https:${data.iconUrl}`;
+  //     locationDiv.append(imgIcon);
+  //   } else {
+  //     imgIcon.src = './img/load.png';
+  //     locationDiv.append(imgIcon);
+  //   }
+  // } else {
+  //   img.remove();
+  //   let imgIcon = document.createElement('img');
+  //   imgIcon.classList.add('img-icon');
+  //   if (data.iconUrl) {
+  //     imgIcon.src = `https:${data.iconUrl}`;
+  //     locationDiv.append(imgIcon);
+  //   } else {
+  //     imgIcon.src = './img/load.png';
+  //     locationDiv.append(imgIcon);
+  //   }
+  // }
 
   temp.innerText = data.currentTemp.c;
   description.innerText = `${data.description}`;
